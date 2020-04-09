@@ -4,8 +4,8 @@ public class GuessNumberGame {
     public static final String ANSWER_RESULT_PATTERN = "%sA%sB";
     private final String answer;
 
-    public GuessNumberGame(String answer) {
-        this.answer = answer;
+    public GuessNumberGame(AnswerGenerator answerGenerator) {
+        this.answer = answerGenerator.generate();
     }
 
     public String guess(String inputNumbers) {

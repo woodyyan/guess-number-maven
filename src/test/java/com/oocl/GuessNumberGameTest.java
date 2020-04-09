@@ -3,6 +3,7 @@ package com.oocl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class GuessNumberGameTest {
     private GuessNumberGame game;
@@ -11,7 +12,9 @@ public class GuessNumberGameTest {
     public void setUp() throws Exception {
         // before method
         String answer = "1234";
-        game = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator = Mockito.mock(AnswerGenerator.class);
+        Mockito.when(answerGenerator.generate()).thenReturn(answer);
+        game = new GuessNumberGame(answerGenerator);
     }
 
     @Test
