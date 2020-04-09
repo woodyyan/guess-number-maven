@@ -13,4 +13,14 @@ public class GuessNumberGameTest {
 
         Assert.assertEquals("4A0B", result);
     }
+
+    @Test
+    public void should_return_2A2B_when_answer_is_1234_given_input_is_1243() {
+        String answer = "1234";
+        GuessNumberGame game = new GuessNumberGame(answer);
+        String inputNumbers = "1243";
+        String result = game.guess(inputNumbers);
+
+        Assert.assertEquals("2A2B", result);
+    }
 }
